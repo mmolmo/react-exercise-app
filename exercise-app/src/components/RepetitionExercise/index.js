@@ -5,14 +5,22 @@ const RepetitionScreen = ({ exerciseName, onGoBack }) => {
 
   return (
     <>
-      <h2>Repetition Exercise: {exerciseName} </h2>
+      <h2 className="exercise-title">Repetition Exercise: {exerciseName} </h2>
       <p>Do as many as you can!</p>
-      <p>Reps: {count}</p>
-      <button onClick={() => setCount(count + 1)}> ++ Counter</button>
-      <button onClick={() => setCount(0)}> Reset Counter</button>
-      <button onClick={onGoBack}>Back to Main Menu</button>
+      <p className="important-counter">Reps: {count}</p>
+      <ul className="options-selection">
+        <li>
+          <button className="increase-button" onClick={() => setCount(count + 1)}> ++ Counter</button>
+        </li>
+        <li>
+          <button onClick={() => setCount(0)}> Reset Counter</button>
+        </li>
+        <li>
+          <button onClick={onGoBack}>Back to Main Menu</button>
+        </li>
+      </ul>
     </>
   );
 };
   
-  export default RepetitionScreen;
+export default RepetitionScreen;

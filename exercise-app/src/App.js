@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./App.css"
-import MainMenuApp from "./components/MainMenuApp"
+import MainMenuScreen from "./components/MainMenuScreen";
 import RepetitionScreen from "./components/RepetitionExercise";
 import DurationScreen from "./components/DurationExercise";
 
@@ -62,12 +62,11 @@ function App() {
   // render the components if the condition is true, otherwise render nothing. acts as a menu switch
   return (
     <>
-      <div className="App">
-      <h1>Let's Get Moving!</h1>
-        {exercise.screen === "menu" && <MainMenuApp data={exerciseData} onSelectExercise={handleExerciseSelect} />}
-        {exercise.screen === "repetition" && <RepetitionScreen exerciseName={exercise.name} onGoBack={handleGoBack} />}
-        {exercise.screen === "duration" && <DurationScreen exerciseName={exercise.name} onGoBack={handleGoBack} />}
-      </div>
+      <main className="App">
+          {exercise.screen === "menu" && <MainMenuScreen data={exerciseData} onSelectExercise={handleExerciseSelect} />}
+          {exercise.screen === "repetition" && <RepetitionScreen exerciseName={exercise.name} onGoBack={handleGoBack} />}
+          {exercise.screen === "duration" && <DurationScreen exerciseName={exercise.name} onGoBack={handleGoBack} />}
+      </main>
     </>
   )
 }

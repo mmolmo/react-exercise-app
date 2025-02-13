@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 //links: 
 //https://react.dev/reference/react/useEffect
@@ -27,16 +28,28 @@ function DurationExercise({ exerciseName, onGoBack }) {
     return () => clearInterval(interval);
   }, [start])
 
-    return (
-      <>
-        <h2>Duration Exercise: {exerciseName} </h2>
-        <p>Do it for as long as you can!</p>
-        <p>Time: {Math.floor(((timer / 1000) / 60) / 60)}h : {Math.floor((timer / 1000) / 60)}m : {Math.floor((timer / 1000))}s </p>
-        <button onClick={() => setStart(!start)}>{start ? "Pause Timer" : "Start Timer"}</button>
-        <button onClick={() => setTimer(0)}> Reset Timer</button>
-        <button onClick={onGoBack}>Back to Main Menu</button>
-      </>
-    )
+  return (
+    <>
+      <h2 className="exercise-title"> Duration Exercise: {exerciseName} </h2>
+      <p>Do it for as long as you can!</p>
+      <p className="important-counter" >Time: {Math.floor(((timer / 1000) / 60) / 60)}h : {Math.floor((timer / 1000) / 60)}m : {Math.floor((timer / 1000))}s </p>
+      
+      <ul className="options-selection">
+        <li>
+          <button onClick={() => setStart(!start)}>{start ? "Pause Timer" : "Start Timer"}</button>
+        </li>
+        <li>
+          <button onClick={() => setTimer(0)}> 
+            Reset Timer
+            
+          </button>
+        </li>
+        <li>
+          <button onClick={onGoBack}>Back to Main Menu</button>
+        </li>
+      </ul>
+    </>
+  )
   }
   
   export default DurationExercise;
