@@ -1,23 +1,9 @@
-# Exercise Tracking App
+# Getting Started with Create React App
 
-This project displays a workout tracking application using Create React App, allowing users to track both repetition-based exercises (like push-ups) and duration-based exercises (like running or planks).
-
-# Features
-- Clean, responsive user interface with a modern design
-- Two types of exercise tracking:
-  - Repetition counting for exercises like push-ups and jumping jacks
-  - Duration timing for exercises like running and planks
-- Interactive exercise cards with background images and type indicators
-- Real-time stopwatch functionality with hours, minutes, and seconds display
-- Responsive design that works on both desktop and mobile devices
-- Accessibility features including reduced motion support and proper focus management
-- Custom styling with CSS variables for easy theme modification
-
-# Installing Dependencies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Run `npm install` to install all dependencies.
 
 ## Available Scripts
+
 In the project directory, you can run:
 
 ### `npm start`
@@ -53,33 +39,32 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Project Structure
-```
-/src
- ├── /components          # React components
- │   ├── MainMenuScreen   # Main menu with exercise selection
- │   ├── DurationScreen   # Timer for duration-based exercises
- │   └── RepetitionScreen # Counter for repetition-based exercises
- ├── /img                 # Material icons and assets
- └── App.js               # Main application component
-```
+## Learn More
 
-## Styling
-The application uses a custom CSS design system with:
-- CSS variables for consistent theming
-- Responsive design breakpoints
-- Google Fonts integration (Inter, Roboto Mono)
-- Material Design icons
-- CSS transitions and hover effects
-- Accessibility considerations including reduced motion support
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Credits
-- Images: [Unsplash](https://unsplash.com) - Exercise background images
-- Icons: Google Material Icons
-- Fonts: Google Fonts (Inter, Roboto Mono)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Browser Support
-The application is built using modern CSS features and React, and supports:
-- Modern evergreen browsers (Chrome, Firefox, Safari, Edge)
-- Responsive layouts for mobile and desktop devices
-- Reduced motion preferences for accessibility
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
