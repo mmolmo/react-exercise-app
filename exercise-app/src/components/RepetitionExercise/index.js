@@ -5,11 +5,25 @@ import backIcon from '../../img/arrow_back_24dp_UNDEFINED_FILL0_wght400_GRAD0_op
 import plusIcon from '../../img/add_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.svg';
 import minusIcon from '../../img/remove_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg';
 
-const RepetitionScreen = ({ exerciseName, onGoBack }) => {
+const RepetitionScreen = ({ exerciseName, exerciseImage, onGoBack }) => {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div className="exercise-bg"
+      style={{
+        backgroundImage: `
+          linear-gradient( 
+            rgb(0, 0, 0, 0.7), 
+            rgba(0, 0, 0, 0)
+          ), 
+          url(${exerciseImage})
+        `,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        backgroundBlendMode: 'multiply',
+      }}
+    >
       <h2 className="exercise-title">Repetition Exercise: {exerciseName} </h2>
       <p>Do as many as you can!</p>
       <p className="important-counter">{count}</p>
@@ -20,17 +34,24 @@ const RepetitionScreen = ({ exerciseName, onGoBack }) => {
           </button>
         </li>
         <li>
+          <button onClick={() => 
+            count<=0 ? setCount(0) 
+            : setCount(count - 1)}>
+            <img src={minusIcon} alt="minus counter button" className="button-icon" /> 
+          </button>
+        </li>
+        <li>
           <button className="increase-button" onClick={() => setCount(count + 1)}>
             <img src={plusIcon} alt="plus counter button" className="button-icon" /> 
           </button>
         </li>
         <li>
           <button onClick={() => setCount(0)}>
-            <img src={resetIcon} alt="reset button" className="button-icon" /> 
+            <img src={resetIcon} alt="reset button" className="button-icon" />
           </button>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
   

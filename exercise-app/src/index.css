@@ -10,8 +10,8 @@
   --text-light: #FFFFFF;
   --text-dark: #000000;
   --bg-dark: #000000;
-  --dark-transparent: rgba(72, 72, 72, 0.5);
-  --dark-transparent-hover: rgba(117, 117, 117, 0.5);
+  --dark-transparent: rgba(255, 255, 255, 0.158);
+  --dark-transparent-hover: rgba(255, 255, 255, 0.255);
   --overlay-dark: rgba(0, 0, 0, 0.5);
   --transition: all 0.3s ease-in-out;
 }
@@ -39,6 +39,7 @@ li {
 .MainMenuScreen {
   padding: 2rem 1rem;
   max-width: 800px;
+  min-width: none;
   margin: 0 auto;
   width: 100%;
 }
@@ -58,6 +59,13 @@ li {
   margin: 0;
 }
 
+.type-icon{
+  fill: var(--text-light);
+  filter: invert(1);
+  min-width: 16px;
+}
+
+/* Exercise Card Styles */
 .menu-exercise-card {
   position: relative;
   border-radius: 1rem;
@@ -73,19 +81,10 @@ li {
   text-align: left;
 }
 
-.menu-exercise-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.7)
-  );
-  z-index: 1;
+.menu-exercise-card:hover {
+  transform: translateX(5px);
+  transition: all 1s ease-in-out;
+  background-size: 124%;
 }
 
 .menu-exercise-card > div {
@@ -127,13 +126,17 @@ li {
   transform: translateY(-2px);
 }
 
+.menu-exercise-card:hover::before {
+  transform: scale(1.1);
+}
+
 .button-icon{
   fill: var(--text-light);
   filter: invert(1);
   min-width: 48px;
 }
 
-/* Exercise Screen Styles */
+/* Additional Exercise Screen Styles */
 .exercise-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -184,6 +187,11 @@ li {
   background-color: var(--primary) !important;
 }
 
+.play-button:hover, .increase-button:hover, 
+.play-button:focus, .increase-button:focus {
+  background-color: var(--primary-hover) !important;
+}
+
 /* Back Button */
 .back-button {
   position: fixed;
@@ -206,10 +214,19 @@ li {
   .menu-title {
     font-size: 2.5rem;
   }
+
+  .MainMenuScreen{
+    max-width: 75%;
+  }
+
+  .main-menu-selection{
+    align-items: center;
+  }
   
   .menu-exercise-card {
     min-height: 150px;
     padding: 1.5rem;
+    width: 100%;
   }
   
   .menu-exercise-card h1 {

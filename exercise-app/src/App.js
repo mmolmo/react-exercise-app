@@ -15,6 +15,7 @@ function App() {
   const exerciseValues = {
     screen: "menu",
     name: "",
+    image: "",
   }
   
   // does what setscreen does with the name passed in as another param
@@ -22,50 +23,57 @@ function App() {
 
   //const [screen, setScreen] = useState("menu");
 
+  //exerciseData is passed into the MainMenuScreen component to be processed
   let exerciseData = [
     {
       id: "pushups",
       name: "Push Ups",
       type: "repetition",
+      image: "https://images.unsplash.com/photo-1603503364272-6e28e046b37a?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: 'jumpingjacks',
       name: 'Jumping Jacks',
       type: 'repetition',
+      image: "https://images.unsplash.com/photo-1510487156526-04f33237c1e6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: 'running',
       name: 'Running',
       type: 'duration',
+      image: 'https://plus.unsplash.com/premium_photo-1679938885972-180ed418f466?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       id: 'plank',
       name: 'Plank',
       type: 'duration',
-    }
+      image: 'https://plus.unsplash.com/premium_photo-1672352100050-65cb2ee4d818?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    }    
   ]
 
   //const handleExerciseSelect = (type) => setScreen(type);
 
-  // does what handleExerciseSelect does with the screen as the type, and the name passed in as another param
-  const handleExerciseSelect = (type, name) => {
-    setExercise({ ...exercise, screen: type, name });
+  // sets the exercise screen(type) to be displayed using usestate, and the name / images passed in as another param
+  // commented out function above was the initial process, but the one below is more suited for this situation
+  const handleExerciseSelect = (type, name, image) => {
+    setExercise({ ...exercise, screen: type, name, image });
   };
 
   //const handleGoBack = () => { setScreen("menu"); };
 
+  // sets the screen back the main menu
   const handleGoBack = () => {
-    setExercise({ ...exercise, screen: "menu", name: "" });
+    setExercise({ ...exercise, screen: "menu", name: "", image: "" });
   };
 
-
-  // render the components if the condition is true, otherwise render nothing. acts as a menu switch
+  // Short circuit evaluation: render the components if the condition is true, otherwise render nothing. acts as a menu switch
+  // passes the appropriate props to each screen
   return (
     <>
       <main className="App">
-          {exercise.screen === "menu" && <MainMenuScreen data={exerciseData} onSelectExercise={handleExerciseSelect} />}
-          {exercise.screen === "repetition" && <RepetitionScreen exerciseName={exercise.name} onGoBack={handleGoBack} />}
-          {exercise.screen === "duration" && <DurationScreen exerciseName={exercise.name} onGoBack={handleGoBack} />}
+        {exercise.screen === "menu" && <MainMenuScreen data={exerciseData} onSelectExercise={handleExerciseSelect} />}
+        {exercise.screen === "repetition" && <RepetitionScreen exerciseName={exercise.name} exerciseImage={exercise.image} onGoBack={handleGoBack} />}
+        {exercise.screen === "duration" && <DurationScreen exerciseName={exercise.name} exerciseImage={exercise.image} onGoBack={handleGoBack} />}
       </main>
     </>
   )
