@@ -5,10 +5,13 @@
 :root {
   --primary: #D12323;
   --primary-hover: #e63e3e;
-  --primary-transparent: rgba(209, 35, 35, 0.8);
+  --primary-transparent-hover: rgba(209, 35, 35, 0.8);
+  --primary-transparent: rgba(209, 35, 35, 0.5);
   --text-light: #FFFFFF;
   --text-dark: #000000;
   --bg-dark: #000000;
+  --dark-transparent: rgba(72, 72, 72, 0.5);
+  --dark-transparent-hover: rgba(117, 117, 117, 0.5);
   --overlay-dark: rgba(0, 0, 0, 0.5);
   --transition: all 0.3s ease-in-out;
 }
@@ -109,7 +112,7 @@ li {
 .menu-exercise-card button {
   position: relative;
   z-index: 2;
-  background-color: var(--primary);
+  background-color: var(--primary-transparent);
   color: var(--text-light);
   border-radius: 2rem;
   padding: 0.75rem 2rem;
@@ -120,8 +123,14 @@ li {
 }
 
 .menu-exercise-card button:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--primary-transparent-hover);
   transform: translateY(-2px);
+}
+
+.button-icon{
+  fill: var(--text-light);
+  filter: invert(1);
+  min-width: 48px;
 }
 
 /* Exercise Screen Styles */
@@ -151,7 +160,7 @@ li {
 }
 
 .options-selection button {
-  background-color: var(--primary-transparent);
+  background-color: var(--dark-transparent);
   color: var(--text-light);
   border: none;
   border-radius: 50%;
@@ -167,8 +176,12 @@ li {
 }
 
 .options-selection button:hover {
-  background-color: var(--primary);
+  background-color: var(--dark-transparent-hover);
   transform: scale(1.1);
+}
+
+.play-button, .increase-button {
+  background-color: var(--primary) !important;
 }
 
 /* Back Button */
@@ -176,7 +189,7 @@ li {
   position: fixed;
   top: 1rem;
   left: 1rem;
-  background: none;
+  background-color: none;
   border: none;
   color: var(--text-light);
   display: flex;

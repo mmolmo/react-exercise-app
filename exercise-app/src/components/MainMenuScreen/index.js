@@ -7,6 +7,8 @@ const exerciseImages = {
   running: "https://plus.unsplash.com/premium_photo-1679938885972-180ed418f466?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   plank: "https://plus.unsplash.com/premium_photo-1672352100050-65cb2ee4d818?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 };
+
+
 //get menuData from app js and put it into the menu array.
 //map the menuData array into the menu. array
 const MainMenuScreen = ({ data, onSelectExercise }) => {
