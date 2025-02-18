@@ -4,6 +4,9 @@ import "./App.css"
 import MainMenuScreen from "./components/MainMenuScreen";
 import RepetitionScreen from "./components/RepetitionExercise";
 import DurationScreen from "./components/DurationExercise";
+import WeightScreen from "./components/WeightExercise";
+
+import BottomNav from "./components/BottomNav"; 
 
 //links:
 // passing multiple values in useState from here:
@@ -20,6 +23,10 @@ function App() {
   
   // does what setscreen does with the name passed in as another param
   const [exercise, setExercise] = useState(exerciseValues);
+  const handleNavigation = () => {
+    //setCurrentScreen(screen);
+    console.log('navbar button press');
+  };
 
   //const [screen, setScreen] = useState("menu");
 
@@ -48,7 +55,13 @@ function App() {
       name: 'Plank',
       type: 'duration',
       image: 'https://plus.unsplash.com/premium_photo-1672352100050-65cb2ee4d818?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    }    
+    }, 
+    {
+      id: 'benchpress',
+      name: 'Bench Press',
+      type: 'weight',
+      image: 'https://images.unsplash.com/photo-1534368420009-621bfab424a8?auto=format&fit=crop&q=80&w=2000',
+    }  
   ]
 
   //const handleExerciseSelect = (type) => setScreen(type);
@@ -66,6 +79,8 @@ function App() {
     setExercise({ ...exercise, screen: "menu", name: "", image: "" });
   };
 
+  const isExerciseMode = false;
+
   // Short circuit evaluation: render the components if the condition is true, otherwise render nothing. acts as a menu switch
   // passes the appropriate props to each screen
   return (
@@ -74,6 +89,10 @@ function App() {
         {exercise.screen === "menu" && <MainMenuScreen data={exerciseData} onSelectExercise={handleExerciseSelect} />}
         {exercise.screen === "repetition" && <RepetitionScreen exerciseName={exercise.name} exerciseImage={exercise.image} onGoBack={handleGoBack} />}
         {exercise.screen === "duration" && <DurationScreen exerciseName={exercise.name} exerciseImage={exercise.image} onGoBack={handleGoBack} />}
+        {exercise.screen === "weight" && <WeightScreen exerciseName={exercise.name} exerciseImage={exercise.image} onGoBack={handleGoBack} />}
+        {!isExerciseMode && (
+          <BottomNav onNavigate={handleNavigation} />
+        )}
       </main>
     </>
   )

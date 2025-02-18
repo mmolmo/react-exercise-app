@@ -88,14 +88,14 @@ function DurationExercise({ exerciseName, exerciseImage, onGoBack }) {
     >
       <h2 className="exercise-title"> Duration Exercise: {exerciseName} </h2>
       <p>Do it for as long as you can!</p>
+      <div className="back-button-container">
+        <button onClick={onGoBack} className="back-button">
+          <img src={backIcon} alt="back button" className="button-icon" /> 
+          <p>Back</p>
+        </button>
+      </div>
       <p className="important-counter" >{formatTime(hours)} : {formatTime(minutes)} : {formatTime(seconds)}</p>
-      
       <ul className="options-selection">
-        <li>
-          <button onClick={onGoBack} className="back-button">
-            <img src={backIcon} alt="back button" className="button-icon" />
-          </button>
-        </li>
         <li>
           <button onClick={() => setStart(!start)} className="play-button">{
             start ? <img src={stopIcon} alt="stop button" className="button-icon" /> 

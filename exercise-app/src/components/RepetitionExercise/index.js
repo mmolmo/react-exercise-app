@@ -26,13 +26,14 @@ const RepetitionScreen = ({ exerciseName, exerciseImage, onGoBack }) => {
     >
       <h2 className="exercise-title">Repetition Exercise: {exerciseName} </h2>
       <p>Do as many as you can!</p>
+      <div className="back-button-container">
+        <button onClick={onGoBack} className="back-button">
+          <img src={backIcon} alt="back button" className="button-icon" /> 
+          <p>Back</p>
+        </button>
+      </div>
       <p className="important-counter">{count}</p>
       <ul className="options-selection">
-        <li>
-          <button onClick={onGoBack} className="back-button">
-            <img src={backIcon} alt="back button" className="button-icon" /> 
-          </button>
-        </li>
         <li>
           <button onClick={() => 
             count<=0 ? setCount(0) 
