@@ -374,11 +374,35 @@ li {
 
 .bottom-nav{
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+.bottom-nav ul{
+  list-style: none;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   gap: 1rem;
   padding: 1rem;
+  width: 600px;
+}
+
+.bottom-nav li button{
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-light);
 }
 
 .nav-icon {
@@ -387,8 +411,7 @@ li {
   min-width: 48px;
 }
 
-
-.nav-icon:hover {
+.bottom-nav li button:hover, .nav-button-active{
   fill: var(--primary);
   color: rgb(255, 145, 0);
   filter: brightness(0) saturate(100%) invert(70%) sepia(89%) saturate(3269%) hue-rotate(320deg) brightness(105%) contrast(102%);

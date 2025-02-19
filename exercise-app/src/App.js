@@ -5,6 +5,8 @@ import MainMenuScreen from "./components/MainMenuScreen";
 import RepetitionScreen from "./components/RepetitionExercise";
 import DurationScreen from "./components/DurationExercise";
 import WeightScreen from "./components/WeightExercise";
+import StatsMenuScreen from "./components/StatsMenuScreen";
+import HomeMenuScreen from "./components/HomeMenuScreen";
 
 import BottomNav from "./components/BottomNav"; 
 
@@ -23,10 +25,6 @@ function App() {
   
   // does what setscreen does with the name passed in as another param
   const [exercise, setExercise] = useState(exerciseValues);
-  const handleNavigation = () => {
-    //setCurrentScreen(screen);
-    console.log('navbar button press');
-  };
 
   //const [screen, setScreen] = useState("menu");
 
@@ -64,12 +62,27 @@ function App() {
     }  
   ]
 
+  let screenNavData = [
+    {
+      screenname: "exercisemenu",
+    },
+    {
+      screenname: 'statsmenu',
+    }  
+  ]
+
+  
+  const [isExercise, setExerciseModeToggle] = useState(false); // Default to menu screen
+
+  const [currentScreen, setCurrentScreen] = useState('exercisemenu');
+
   //const handleExerciseSelect = (type) => setScreen(type);
 
   // sets the exercise screen(type) to be displayed using usestate, and the name / images passed in as another param
   // commented out function above was the initial process, but the one below is more suited for this situation
   const handleExerciseSelect = (type, name, image) => {
     setExercise({ ...exercise, screen: type, name, image });
+    setExerciseModeToggle(true);
   };
 
   //const handleGoBack = () => { setScreen("menu"); };
@@ -77,21 +90,31 @@ function App() {
   // sets the screen back the main menu
   const handleGoBack = () => {
     setExercise({ ...exercise, screen: "menu", name: "", image: "" });
+    setExerciseModeToggle(false);
+    setCurrentScreen("exercisemenu");
   };
 
-  const isExerciseMode = false;
+  const handleNavSelect = (screenname) => {
+    console.log('navbar button press');
+    setCurrentScreen(screenname);
+    console.log(currentScreen);
+  };
 
   // Short circuit evaluation: render the components if the condition is true, otherwise render nothing. acts as a menu switch
   // passes the appropriate props to each screen
   return (
     <>
       <main className="App">
-        {exercise.screen === "menu" && <MainMenuScreen data={exerciseData} onSelectExercise={handleExerciseSelect} />}
+         {currentScreen === "homemenu" && <StatsMenuScreen />}
+        {currentScreen === "statsmenu" && <StatsMenuScreen />}
+        {/* {exercise.screen === "menu" && <MainMenuScreen data={exerciseData} onSelectExercise={handleExerciseSelect} navdata={screenNavData}/>} */}
+        {currentScreen === "exercisemenu" && exercise.screen === "menu" && 
+        <MainMenuScreen data={exerciseData} onSelectExercise={handleExerciseSelect} navdata={screenNavData}/>}
         {exercise.screen === "repetition" && <RepetitionScreen exerciseName={exercise.name} exerciseImage={exercise.image} onGoBack={handleGoBack} />}
         {exercise.screen === "duration" && <DurationScreen exerciseName={exercise.name} exerciseImage={exercise.image} onGoBack={handleGoBack} />}
         {exercise.screen === "weight" && <WeightScreen exerciseName={exercise.name} exerciseImage={exercise.image} onGoBack={handleGoBack} />}
-        {!isExerciseMode && (
-          <BottomNav onNavigate={handleNavigation} />
+        {!isExercise && (
+          <BottomNav onNavigate={handleNavSelect} navdata={screenNavData} currentScreen={currentScreen} />
         )}
       </main>
     </>
