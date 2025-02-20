@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-exercise-app/static/css/main.09550ed8.css",
+    "main.js": "/react-exercise-app/static/js/main.63127306.js",
+    "static/js/488.f8a3e16b.chunk.js": "/react-exercise-app/static/js/488.f8a3e16b.chunk.js",
+    "index.html": "/react-exercise-app/index.html",
+    "static/media/timer_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/timer_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.f1a27342effbb0c1e675fc21864b2899.svg",
+    "static/media/replay_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/replay_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.9ba62d1f34511786b6c4a0008ab3f2df.svg",
+    "static/media/fitness_center_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/fitness_center_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.b516010d12ad9c698a8046b056f8df77.svg",
+    "static/media/calendar_today_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/calendar_today_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.2f1ef89345eab24cddcd3ab87df1bbdc.svg",
+    "static/media/repeat_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/repeat_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.15e945604c32bd1e1020be8a974b4c33.svg",
+    "static/media/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.8751b5c3a07f1a3c8a10a7eafeb9402d.svg",
+    "static/media/bar_chart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/bar_chart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz48.bb42af59d156a01bba5e44be5e219e54.svg",
+    "static/media/stop_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/stop_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.8b8740da29c7e058e58d35ab21404b9a.svg",
+    "static/media/play_arrow_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/play_arrow_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.e7e0e33b84edba20c7461b261bf4ec4c.svg",
+    "static/media/arrow_back_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/arrow_back_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.553950016ebbb9b7e8b36b34f6b34ef1.svg",
+    "static/media/add_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.svg": "/react-exercise-app/static/media/add_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz48.d1327917ca2aa4f8d463bf6f83a2d3c4.svg",
+    "static/media/remove_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg": "/react-exercise-app/static/media/remove_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.56838a5aadfdcff1b3e7961cd76b4652.svg",
+    "main.09550ed8.css.map": "/react-exercise-app/static/css/main.09550ed8.css.map",
+    "main.63127306.js.map": "/react-exercise-app/static/js/main.63127306.js.map",
+    "488.f8a3e16b.chunk.js.map": "/react-exercise-app/static/js/488.f8a3e16b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09550ed8.css",
+    "static/js/main.63127306.js"
+  ]
+}
